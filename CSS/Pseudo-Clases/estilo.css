@@ -1,0 +1,202 @@
+* {
+	font-family: 'sen', georgia;
+	font-weight: 100;
+	font-size: 30px;
+}
+
+body {
+	padding-top: 100px;
+}
+
+
+.caja1 {
+	height: 250px;
+	width: 250px;
+	background-color: coral;
+	margin: 30px;
+}
+
+.caja1:hover {
+	background: red;
+	height: 350px;
+	width: 350px;
+	transition: background 1s, height 1s, widht 1s;
+}
+
+a:link {
+	color: red;
+}
+
+a:visited {
+	color: blueviolet;
+}
+
+
+.caja2 {
+	margin: 30px;
+	height: 250px;
+	width: 250px;
+	background-color: coral;
+}
+
+.caja2:active {
+	background: blue;
+	width: 500px;
+	transition: all 1s;
+}
+
+
+.caja {
+	margin: 25px;
+
+}
+
+.caja:focus {
+	background: lightgray;
+}
+
+.caja::selection {
+	background-color: white;
+	color: black;
+}
+
+
+
+
+/*****************************************************/
+/* Haciendo un NAV RESPONSIVE solo con CSS
+.nav__responsive-ul {
+	display: none;
+}
+	
+
+.nav {
+	background-color: darkblue;
+}
+
+.nav__li {
+	display: inline-block;
+	padding: 12px;
+	color: #fff; /* Solamente cambia el color de los iconos
+}
+
+.nav__li a {
+	color: #fff;
+	text-decoration: none; /*Le quita el subrayado
+}
+
+.nav__li:hover a {	/*Le cambia el color al texto cuando paso con el mouse
+	color: #bbb;
+}
+
+.nav__li:hover {	/*Le cambia el color al icono cuando paso con el mouse
+	color: #bbb;
+}
+
+.nav__li i {
+	box-sizing:border-box;
+	text-align: right;
+	margin-right: 5px;
+}
+
+
+
+.nav__responsive-button {
+	float: right;
+	font-size: 25px;
+	padding: 6px 20px;
+}
+
+
+@media only screen and (max-width: 500px) {
+	.nav__ul {
+		display: none;
+	}
+
+	.nav {
+		height: 37px;
+		width: 100%;
+		background-color: #69c;
+	}
+
+	.nav__responsive-ul {
+		display: block;
+		position:absolute;
+		width: 100%;
+		background-color: #7af;
+		height: 100%;
+		margin-top: 37px;
+	}
+
+
+	.nav__responsive-li	{
+		width: 100%;
+		padding: 9px 20px;
+	}
+
+	.nav__responsive-li i {
+		box-sizing: border-box;
+		text-align: center;
+		margin-right: 5px;
+		width: 30px;
+		color: #016;
+	}
+
+
+	.nav__responsive-li a {
+		color: #016;
+		text-decoration: none;
+	}
+
+
+}
+
+/*
+
+
+
+.contact-form{
+	font-size: 25px;
+}
+
+.contact-form__h2{
+	font-size: 2em; /* 1em= 16px. (Medida Relativa) al poner 1em, va a tener la misma medida que la caja contenedora
+	font-family: sans-serif, georgia;
+	color: red;
+}	
+
+*/
+
+
+/*Selector del tipo Clase
+.titulo-h2{
+	color:coral
+}
+
+/*Selector del tipo Descendiente
+ h2 p{
+	color: cyan;
+}
+
+.h2-class b {
+	color: red;
+} 
+.h2-class b span {
+color: blue;
+}
+
+/*Selector del tipo Pseudo-Clase
+p:hover{
+	color:chartreuse
+}
+
+/*Selector del tipo ID
+#element-for-modify{
+	color: blueviolet;
+}
+
+/*Metodologia BEM
+.contact-form__input--active {
+    color:;
+}
+*/

@@ -1,0 +1,269 @@
+SINTAXIS CSS:
+
+Selector{
+		propiedad: valor;
+}
+
+
+
+- SELECTORES CSS:
+
+Universal:	*
+
+De Tipo:	Elegimos el Elemente (h1, h2, p...)
+
+Clases:		.class
+
+ID: 		#
+
+Por Atributo:	[]
+
+Descendiente:	h2 p (Modifica a los <p> que esten dentro de un  <h2>)
+		.h2-class p (Tambien se puede hacer con las Clases)
+
+Pseudo Clases:	Son los Eventos de la Seleccion (Pasar el mouse por encima de un texto, y que éste cambie de color)
+
+
+****************************************************
+- ESPECIFICIDAD:
+!Important 
+Estilos en Linea
+Identificadores
+Clases - PseudoClases - Atributos 
+Elementos
+PseudoElementos
+****************************************************
+
+- METODOLOGIA BEM - Block Element Modifier (Modificador de Bloques de Elementos):
+La metodología BEM divide la interfaz de usuario en bloques independientes para crear componentes escalables y reutilizables
+
+<!--
+	<h1>Mi primer titulo editado con CSS</h1>	
+	<h2 class="titulo-h2">Mi primer H2 con CSS</h2>
+	<h2 id="element-for-modify">Mi primer H2 con CSS</h2> 
+	<h2><p>Mi primer H2 con CSS</p></h2>
+	<h2 class="h2-class"><b>Mi primer H2 con CSS<span> Span</span></b></h2>
+	<input type="text" value="Hola">
+	<button>Seguime en Instagram</button>
+	<p>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci odit, laudantium placeat sunt delectus nam aperiam molestiae commodi voluptatum doloremque esse nemo, obcaecati dolores aliquid illo optio deleniti temporibus dignissimos!
+	</p>
+
+	Metodologia BEM
+	<div class="contact-form"> 
+        <input type="text" class="contact-form__input--active">
+        <input type="text" class="contact-form__input">
+        <input type="text" class="contact-form__input">
+        <input type="text" class="contact-form__input">
+        <input type="password" class="contact-form__input">
+    </div>
+	-->
+
+
+	<!--
+	<p class="contact-form">
+		<h2 class="contact-form__h2">Titulo</h2>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod soluta nesciunt obcaecati, cupiditate cum ducimus! Eius soluta id earum sunt velit ab iste nobis, quos consequuntur fugiat excepturi accusantium minima.
+		</p>		
+	</p>
+	-->
+**************************************************************************
+Normalize css: Descargamos y guardamos el archivo. Lo incluimos con la etiqueta link.
+**************************************************************************
+
+- BOX MODEL: Es el Modelo con el cual trabajamos las Cajas.
+
+Content	 - El Contenido se Modifica con la Propiedad: line-height
+Padding	 - Se modifica con la Propiedad: Padding
+Border	- Se modifica con la Propiedad: Border
+Margin	- Se modifica con la Propiedad: Margin
+
+
+- OUTLINE: Es un Shothand (Propiedad Acortada xq es el conjunto de otras propiedades)
+	No ocupa espacio en el DOM (No se ve, solamente RESALTA).
+
+- POSITION
+Para que un elemento adquiera las Propiedades (Top, Right, Botton, Left) primero hay que Posicionarlo para que podamos modificar esas propiedades.
+
+	STATIC: Cuando se usa Static como valor de la propiedad Position, se considera que  no esta posicionado. Es el valor por Defecto, por lo tanto, no adquiere las nuevas propiedades.
+
+	RELATIVE: Adquiere las Propiedades (Top, Right, Botton, Left) Conserva su espacio en pantalla, no los pierde. Las Propiedades Top y Left son las mas importantes. Esto quiere decir, que el sistema  le va a dar prioridad a la Propiedad Top y no a la propiedad Botton. Lo mismo pasa con Left y Right. Y ademas adquiere una nueva Propiedad, el Z-index (Ordena quien va a estar por delante en el eje Z) Es mejor usar numeros altos (minimo 50) para que en el momento q tengamos q agregar una nueva caja entre dos cajas no tengamos problema.
+		Z-index: Solo en elementos posicionados y tiene conflicto entre padres e hijos.
+		La unica forma en que el contenedor Hijo se ponga por encima del contenedor Padre, el Hijo tiene que tener un (z-index: -1;) y el Padre NO tener definido el z-index.
+
+	ABSOLUTE:
+	 - El (position: absolute;) hace que el espacio reservado para una caja, ya no se reserve, por lo tanto, la caja que se encuentre abajo pasara arriba. 
+	 - El ancho de la caja se ajusta al contenido.
+	 - El punto de referencia a partir del cual aplicamos (Top, Right, Botton, Left) va a ser el Viewport, o el contenedor (en el caso que el contenedor este posicionado).
+
+
+	FIXED:
+	Es igual que Absolute, pero ademas queda fijado. Se aplica en los Menues y sobre todo en las publicidades.
+
+	STICKY:
+	Es una mezcla entre el Relative y el Fixed. Cuando con el scrol llega al (top: 30px;) queda fija.
+
+- DISPLAY
+Es una propiedad, que lo que hace es modificar el comportamiento de las cajas.
+
+	BLOCK: Las cajas se colocan una debajo de la otra.
+
+	INLINE: Las cajas se colocan en linea, pero NO SE PUEDE MODIFICAR EL HEIGHT Y EL WIDTH. Solamente son el contenido.
+
+	INLINE-BLOCK: Las cajas se colocan en linea, y ademas podemos modificar el Width y el Height. Es decir, se comporta como un elemento en linea, pero ademas puede adquirir las propiedades de un elemento en bloque.
+
+
+- OVERFLOW: (Tambien es un Shorthand) Es el scroll. Permite hacer determinadas cosas con lo que no entra en la caja, lo que sobra. El valor por defecto es Visible. Se pueden colocar imagenes dentro de la caja, dichas imagenes se auto-ajustan al tamaño de la caja.
+
+	Auto: Detecta que en caso de que el contenido sobrepase la caja, nos da la posibilidad de que podamos Scrollear dentro de la caja sin que el texto sobresalga.
+
+	Scroll: Obligatoriamente coloca la barra de Scroll, por mas que no sea necesario scrollear.
+
+	Hidden: Oculta la barra de Scroll en alguno de los ejes (x,y).
+	
+	Es Shorthand por esto:
+	Overflow-x: scroll/auto;
+	Overflow-y: scroll/auto;
+
+
+- FLOAT:(Ya no se usa, es de la vieja escuela) Ubica un elemento al lado izquierdo o derecho de su contenedor, permitiendo a los elementos de texto y en línea aparecer a su costado.
+(Right, Left, None, Inherit).
+
+
+- PSEUDO-ELEMENTOS: Son elementos que NO son elementos, es decir que NO forman parte del DOM. Pero SI podemos ver cambios visuales (Es como el Outline).
+Los Pseudo-elementos se crean sobre los elementos.
+
+	::first-line	|	BLOCK (NO FUNCIONA EN INLINE)
+
+	::first-letter	|	BLOCK (NO FUNCIONA EN INLINE)
+
+	::placeholder	Es el texto que aparece en un Input antes de escribir.
+
+	::after			|	HIJOS - CONTENT (NECESARIO) - INLINE	/ No forman parte del DOM.
+
+	::before		|	HIJOS - CONTENT (NECESARIO) - INLINE	/ No forman parte del DOM.
+
+	::selection		Realiza los cambios cuando selecciono el texto del PseudoElemento. Se comporta como un elemento en linea, pero con las propiedades bastantes reducidas.
+
+
+- PSEUDO-CLASES: Lo que se hace, es escuchar a los elementos.
+
+	:hover	Es cuando el Mouse pasa por encima, es decir, escucha el evento cuando el Mouise esta por encima. Funciona en cualquier Elemento. No en los Pseudo-Elementos. 
+
+	:link	Es un elemento que lo que hace es cambiar un link que todavia no visitamos.
+
+	:visited	Permite modificar los links que fueron visitados.
+
+	:active		Al dejar apretado un boton cambian los estilos. :active se usa comúnmente en los elementos <a> y <button>, pero también se puede usar en otros elementos, por ejemplo en los enlaces.
+
+	:focus		Se aplica mas a los inputs. Se aplica cuando esta el elemento en foco.
+
+	:lang		Es una funcion, hay que pasarle un parametro. Es utilizada para modificar elementos en función del idioma en el que se determina que están.
+
+
+- OBJECT-FIT: Se aplica mucho para poder modificar las resoluciones de las imagenes y demas.
+
+	Fill: Modifica el tamaño del elemento remplazado para llenar el cuadro de contenido. El objeto completo ocupará todo el espacio de la caja. Si el tamaño del elemento no concuerda con el de su caja, se estirará para llenarlo.
+
+	Contain: Es el valor por defecto. Hace que las resoluciones de la imagen se ajusten al tamaño del contenido, pero no rellena espacios.
+
+	Cover: La imagen se ajusta al contenedor. Si la relacion de aspecto del objeto no coincide con la de su caja,  recorta los demas bordes para ajustarse al tamaño de su caja.
+
+	None: El contenido reemplazado no se redimensiona.
+
+	Scale-Down: El contenido se dimensiona como si none o contain estuvieran especificados, lo que resultaría en un tamaño de objeto concreto más pequeño. Si None es mas pequeño, entonces deja None, Caso contrario, deja Contein.
+
+- OBJECT-POSITION: La propiedad object-position determina el alineamiento del elemento dentro de la caja.
+
+	Left - Right - Top - Button
+	px - em - % - etc...
+
+
+- CURSOR: Es una propiedad que nos permite modificar el cursor.
+
+
+- COLORES: Es recomendable dar los valores de colores usando los valores Hexadecimal, RGB o RGBA. De esta manera es exactamente el color que nosotros deseamos. De lo contrario, si usamos los valores (red, blue, etc...) le estamos dejando al navegador que seleccione un color que pueda ser distinto al deseado.
+			
+			COLOR NAME
+
+			RGB = Red, Green, Blue (Los parametros van del 0 al 255)
+			
+			RGBA = Red, Green, Blue, Alpha (indica la Opacidad. va de 0 a 1). 
+
+			HEXADECIMAL: Usamos el "#" para indicar que estamos usando el Hexadecimal. El color se puede representar con 3 o 6 caracteres. ej (#fff - #ffffff)
+
+
+			HSL
+
+			HSLA
+
+
+- RESPONSIVE DESIGN: Es un concepto que lo que hace es trabajar con distintas resoluciones. Cuando trabajamos con Responsive Design, lo que hacemos, es adaptar una resolucion a varios dispositivos. Para trabajar con Responsive Design se utiliza MediaQuery (Es una particularidad especial de CSS que nos permite detectar una resolucion y cambiar las etiquetas)
+
+- MOBILE FIRST: Hace lo contrario, adapta la pantalla de un celular a la de una tablet o escritorio. Se crea especialmente para Mobile y luego poder adaptarlo a las resoluciones de tablets y pc de escritorio.
+
+
+- FLEX BOX: Requiere de 2 cosas: Un contenedor (Flex Conteiner) y un Contenido (Flex Item). El Conteiner es el que va a contener el/los Items que van a estar contenidos por el contenedor que tiene DISPLAY:FLEX. Los cambios se reflejan en los Item que esten dentro del contenedor. Entonces podemos decir que la caja se comporta como un Bloque, y los elementos son los que van a cambiar (los que estan por dentro).
+
+	Contiene 2 ejes:
+		Main Axis va de izquierda a derecha (Eje X) Main-start y Main-end.  
+		Cross Axis va de arriba hacia abajo (Eje Y) Cross-start y Cross-end.
+
+	--PROPIEDADES QUE SE APLICAN AL CONTENEDOR--
+
+	Flex-Direction Sirve para cambiar la direccion del Main-Axis.
+
+	Flex-Wrap: NoWrap - Wrap - Wrap-Reverse
+
+	Flex-Flow: Flex-Direction Flex-Wrap
+
+	Justify-Content: Center, Space-Arround, Space-Between, Space-Evenly (Main Axis)
+
+	Aling-Items (Se utiliza solamente para 1 linea de cajas): Flex-Start, Center, Flex-End, Stretch, Baseline (Cross Axis)
+
+	Aling-Content (Para mas de 1 linea de cajas)
+
+	--PROPIEDADES QUE SE APLICAN A LOS ITEMS--
+
+	Aling-Self (Croos Axis)
+
+	--FUNCIONAMIENTO DEL MARGIN--
+	Margin-(Direction): auto -> margin = contenedor - tamaño de la caja en el eje en el que corre (Direction)
+
+	Flex-Grow (Espacio asignado + Sobrante / Grows) (Main-Axis)
+
+	Flex-Shrink: Espacio que "cede" (Main-Axis) Especifica el factor de contracción de un flex item. Los flex items se encogerán para llenar el contenedor de acuerdo a su número flex-shrink , cuando el tamaño por defecto de los flex items sea mayor al de su contenedor flex container.
+
+	Flex-Basis: Medicion antes de encogerse (En auto(defect value), tiene mas PRIORIDAD que el Width.  Especifíca la base flexible, la cual es el tamaño inicial de un elemento flexible. Ésta propiedad determina el tamaño de una caja de contenidos a no ser que se haya especificado de otra forma usando box-sizing.
+
+	Flex (Shorthand): Flex-Grow, Flex-Shrink, Flex-Basis (al menos el primer parametro obligatorio)
+
+	Order: (Como el Z-Index, pero en el eje en el que apunta el Main-Axis) Es decir que la caja de mayor peso, es la que va al FINAL DE LA DIRECCION en la que apunta el Main-Axis.
+
+
+
+- GRID
+
+	--CONCEPTOS BASICOS--
+
+	Grid
+	
+	Grid Container: Funciona igual que el Flex Container.
+	Grid Item
+	Grid Cell 
+	Grid Tracks (Column y Row)
+	Grid Area 
+	Grid Line (Column Line y Row Line)
+
+	--PROPIEDADES--
+	grid-template-rows (Grid-container)
+	grid-template-columns (Grid-container)
+
+	grid-row-gap (Grid-container)
+	grid-column-gap (Grid-container)
+	grid-gap
+
+		
+
+
+	
